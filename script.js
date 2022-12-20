@@ -1,20 +1,23 @@
-let quote = document.querySelectorAll("quote");
-let author = document.querySelectorAll("author");
-let newQuote = document.querySelectorAll("new-quote-btn");
+let quote = document.getElementById("quote");
+let author = document.getElementById("author");
+let newQuote = document.getElementById("new-quote");
 
-const options = {
-	method: 'POST',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'andruxnet-random-famous-quotes.p.rapidapi.com'
-	}
-};
-// const url = "https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=movies&count=10";
+
+// const url = "https://api.quotable.io/random";
+const url = "https://type.fit/api/quotes";
 
 let getQuote = () => {
-    fetch("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=movies&count=10")
+    fetch(url)
         .then(response => response.json())
-        .then(response => console.log(response));
+        .then(response =>  {
+            const firstObject = response[Math.floor(Math.random()*1500)];
+            console.log(firstObject.text);
+            console.log(firstObject.author);
+            quote.innerText = firstObject.text;
+            author.innerText = firstObject.author;
+        });
 }
 
-window.addEventListener("load",getQuote);
+
+window.addEventListener("load", getQuote);
+newQuote.addEventListener("click", getQuote);
