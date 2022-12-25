@@ -18,10 +18,10 @@ let getQuote = () => {
             quote.innerText = firstObject.text;
          if(!firstObject.author) {
                     author.innerText = "- Anonymous";
-                    
+
             } else author.innerText = "- " + firstObject.author;
-            
-        
+
+
         });
 }
 
@@ -31,16 +31,16 @@ twitterBtn.addEventListener("click", ()=>{
 });
 
 copyBtn.addEventListener("click", () => {
-    // console.log("button was clicked");     
+    // console.log("button was clicked");
     navigator.clipboard
       .writeText(quote.innerText)
       .then(
-              success => console.log("text copied"), 
+              success => console.log("text copied"),
               err => console.log("error copying text")
         );
 });
-    
-    
+
+
 
 window.addEventListener("load", getQuote);
 newQuote.addEventListener("click", getQuote);
