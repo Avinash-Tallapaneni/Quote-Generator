@@ -4,7 +4,7 @@ This is my second project in a journey to become front end web developer. Had a 
 
 ### Screenshot
 
-![](./screenshot.png)
+![Screenshot](https://user-images.githubusercontent.com/104318799/209460050-4a800469-b9e7-4265-9dae-f6778b98fb02.png)
 
 
 ## Author
